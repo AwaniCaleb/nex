@@ -52,3 +52,43 @@ venv\\Scripts\\activate   # Windows
 
 # Install dependencies
 pip install -r requirements.txt
+```
+
+### Running the App
+```bash
+python -m nex.main
+```
+## Usage
+### Peer Discovery
+- Automatic: NEX scans the LAN via mDNS/UDP broadcast.
+- Manual: Enter an IP address to connect.
+
+### Chat & File Transfer
+1. Select a peer from the list.
+2. Type your message and hit Enter.
+3. Use the 📎 icon to pick and send files.
+
+## Architecture
+```bash
+nex/
+├─ ui/          # PyQt GUI components
+├─ network/     # mDNS, UDP, ZeroMQ transports
+├─ crypto/      # key management & encryption
+├─ storage/     # encrypted SQLite
+└─ tests/       # pytest + GUI tests
+```
+
+## Security
+- Key Exchange: Public key via QR code.
+- Encryption: Authenticated encryption (libsodium).
+- Replay Protection: Nonces & timestamps.
+
+## Roadmap
+See [ROADMAP.md](./ROADMAP.md) for upcoming milestones.
+
+##Contributing
+Please refer to [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
+
+##License
+NEX is released under the GNU General Public License v3.0 (GPL-3.0). See [LICENSE](./LICENSE) for full terms.
+
